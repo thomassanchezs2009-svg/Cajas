@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CSS Fácil | SENA Cenigraf ADSO</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- FUENTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --fondo: #080f1e;
+            --fondo-secundario: #101d33;
+            --azul: #2563eb;
+            --azul-claro: #38bdf8;
+            --blanco: #f8fafc;
+            --texto: #cbd5e1;
+            --borde: rgba(255, 255, 255, .12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background: var(--fondo);
+            color: var(--blanco);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        /* NAVBAR */
+
+        .caja1 {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            min-height: 85px;
+            padding: 15px 25px;
+            background: rgba(8, 15, 30, .92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 11px 17px;
+            border: 1px solid var(--borde);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .05);
+            color: var(--blanco);
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 600;
+            transition: .3s ease;
+        }
+
+        .btn-nav i {
+            color: var(--azul-claro);
+            font-size: 1.1rem;
+        }
+
+        .btn-nav:hover {
+            background: var(--azul);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--azul);
+        }
+
+        .btn-nav:hover i {
+            color: white;
+        }
+
+        /* PORTADA */
+
+        .caja2 {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: 540px;
+            padding: 90px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(120deg, #0f2850, #080f1e 75%);
+        }
+
+        .caja2::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            right: 5%;
+            top: 5%;
+            border-radius: 50%;
+            background: #2563eb;
+            filter: blur(150px);
+            opacity: .3;
+            z-index: -1;
+        }
+
+        .caja2 .etiqueta {
+            display: inline-block;
+            width: fit-content;
+            padding: 9px 17px;
+            border-radius: 30px;
+            background: rgba(56, 189, 248, .12);
+            color: var(--azul-claro);
+            border: 1px solid rgba(56, 189, 248, .3);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .caja2 .titulo {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -4px;
+            line-height: 1.05;
+        }
+
+        .titulo span {
+            color: var(--azul-claro);
+        }
+
+        .caja2 p {
+            color: var(--texto);
+        }
+
+        .caja2 .descripcion {
+            font-size: 1.15rem;
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        .btn-principal {
+            background: var(--azul);
+            border: none;
+            border-radius: 12px;
+            padding: 13px 25px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-principal:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, .3);
+        }
+
+        /* TARJETAS GENERALES */
+
+        [class*="caja"] {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .caja3,
+        .caja4,
+        .caja5 {
+            min-height: 330px;
+            padding: 40px 30px;
+            background: var(--fondo-secundario);
+            border: 1px solid var(--borde);
+            transition: .35s ease;
+        }
+
+        .caja3:hover,
+        .caja4:hover,
+        .caja5:hover {
+            background: #162b4b;
+            transform: translateY(-7px);
+            border-color: var(--azul-claro);
+        }
+
+        .icono-grande {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 75px;
+            height: 75px;
+            border-radius: 20px;
+            background: rgba(37, 99, 235, .17);
+            color: var(--azul-claro);
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+
+        .caja3 h3,
+        .caja4 h3,
+        .caja5 h3 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .caja3 p,
+        .caja4 p,
+        .caja5 p {
+            color: var(--texto);
+            line-height: 1.8;
+        }
+
+        /* NAVEGACIÓN RÁPIDA */
+
+        .caja6 {
+            min-height: 260px;
+            padding: 30px;
+            background: #10294a;
+            border: 1px solid var(--borde);
+        }
+
+        .caja6 h4,
+        .caja10 h4 {
+            font-weight: 700;
+        }
+
+        .caja6 ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .caja6 a,
+        .caja10 a {
+            color: var(--texto);
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .caja6 a:hover,
+        .caja10 a:hover {
+            color: var(--azul-claro);
+        }
+
+        /* ESTADÍSTICAS */
+
+        .caja7,
+        .caja8,
+        .caja9 {
+            min-height: 260px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background: #101d33;
+            border: 1px solid var(--borde);
+            transition: .3s;
+        }
+
+        .caja7:hover,
+        .caja8:hover,
+        .caja9:hover {
+            background: #19345a;
+        }
+
+        .stat-icon {
+            color: var(--azul-claro);
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .stat {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .caja7 p,
+        .caja8 p,
+        .caja9 p {
+            color: var(--texto);
+            margin-top: 8px;
+        }
+
+        /* FOOTER */
+
+        .caja10 {
+            min-height: 260px;
+            padding: 30px;
+            background: #0c1729;
+            border: 1px solid var(--borde);
+        }
+
+        .caja10 small {
+            display: block;
+            margin-top: 35px;
+            color: #64748b;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .caja1 {
+                padding: 15px 10px;
+                position: relative;
+            }
+
+            .btn-nav {
+                font-size: .78rem;
+                padding: 9px 11px;
+            }
+
+            .caja2 {
+                min-height: 480px;
+                padding: 60px 25px;
+            }
+
+            .caja2 .titulo {
+                letter-spacing: -2px;
+            }
+
+            .caja3,
+            .caja4,
+            .caja5 {
+                min-height: 270px;
+            }
+
+            .caja6,
+            .caja7,
+            .caja8,
+            .caja9,
+            .caja10 {
+                min-height: 220px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn-nav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .caja2 .titulo {
+                font-size: 3rem;
+            }
+
+            .caja2 .descripcion {
+                font-size: 1rem;
+            }
+
+            .stat {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row g-0">
+
+            <!-- NAVBAR -->
+
+            <nav class="col-12 caja1 d-flex flex-wrap align-items-center justify-content-center gap-2">
+
+                <a class="btn-nav" href="#estructura">
+                    <i class="bi bi-code-slash"></i>
+                    Estructura y sintaxis
+                </a>
+
+                <a class="btn-nav" href="#especificidad">
+                    <i class="bi bi-layers"></i>
+                    Niveles de especificidad
+                </a>
+
+                <a class="btn-nav" href="#pseudo">
+                    <i class="bi bi-cursor"></i>
+                    Pseudo Clases y Elementos
+                </a>
+
+                <a class="btn-nav" href="#boxmodel">
+                    <i class="bi bi-bounding-box"></i>
+                    Box Model
+                </a>
+
+            </nav>
+
+            <!-- PORTADA -->
+
+            <header class="col-12 caja2">
+
+                <span class="etiqueta">
+                    <i class="bi bi-mortarboard-fill me-2"></i>
+                    SENA CENIGRAF | ADSO
+                </span>
+
+                <h1 class="titulo">
+                    CSS <span>FÁCIL</span>
+                </h1>
+
+                <p class="fs-4 mb-2">
+                    Educativo y Visual
+                </p>
+
+                <p class="fs-5">
+                    Bogotá - Colombia
+                </p>
+
+                <div class="mt-4">
+
+                    <h2 class="h3 fw-bold">
+                        Aprende Desarrollo Web
+                    </h2>
+
+                    <p class="descripcion">
+                        Domina HTML5, CSS3 y Bootstrap creando maquetas profesionales.
+                        Descubre las herramientas fundamentales del desarrollo web.
+                    </p>
+
+                    <button class="btn btn-primary btn-lg btn-principal mt-2">
+                        <i class="bi bi-play-circle me-2"></i>
+                        Ver Cursos
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- ESTRUCTURA HTML -->
+
+            <section id="estructura" class="col-12 col-md-4 caja3">
+
+                <i class="bi bi-filetype-html icono-grande"></i>
+
+                <h3>Estructura HTML</h3>
+
+                <p>
+                    Organiza tu código semántico para mejorar el posicionamiento
+                    y la accesibilidad.
+                </p>
+
+            </section>
+
+            <!-- CSS -->
+
+            <section id="especificidad" class="col-12 col-md-4 caja4">
+
+                <i class="bi bi-filetype-css icono-grande"></i>
+
+                <h3>Estilos CSS</h3>
+
+                <p>
+                    Aplica diseños atractivos, colores, tipografías y efectos
+                    visuales a tus componentes.
+                </p>
+
+            </section>
+
+            <!-- BOOTSTRAP -->
+
+            <section id="pseudo" class="col-12 col-md-4 caja5">
+
+                <i class="bi bi-bootstrap-fill icono-grande"></i>
+
+                <h3>Bootstrap 5</h3>
+
+                <p>
+                    Acelera tu desarrollo usando el sistema de rejilla y
+                    componentes prediseñados.
+                </p>
+
+            </section>
+
+            <!-- NAVEGACIÓN RÁPIDA -->
+
+            <aside id="boxmodel" class="col-12 col-md-3 caja6">
+
+                <h4>
+                    <i class="bi bi-compass me-2"></i>
+                    Navegación Rápida
+                </h4>
+
+                <ul class="list-unstyled mt-4 fs-5">
+
+                    <li>
+                        <a href="https://developer.mozilla.org/es/docs/Web/CSS">
+                            <i class="bi bi-book me-2"></i>
+                            Documentación
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://getbootstrap.com/">
+                            <i class="bi bi-laptop me-2"></i>
+                            Ejemplos
+                        </a>
+                    </li>
+
+                </ul>
+
+            </aside>
+
+            <!-- ESTADÍSTICA 1 -->
+
+            <section class="col-6 col-md-2 caja7">
+
+                <i class="bi bi-people-fill stat-icon"></i>
+
+                <div class="stat">+500</div>
+
+                <p>Alumnos registrados</p>
+
+            </section>
+
+            <!-- ESTADÍSTICA 2 -->
+
+            <section class="col-6 col-md-2 caja8">
+
+                <i class="bi bi-tools stat-icon"></i>
+
+                <div class="stat">100%</div>
+
+                <p>Práctico</p>
+
+            </section>
+
+            <!-- ESTADÍSTICA 3 -->
+
+            <section class="col-12 col-md-2 caja9">
+
+                <i class="bi bi-infinity stat-icon"></i>
+
+                <div class="stat">24/7</div>
+
+                <p>Acceso ilimitado</p>
+
+            </section>
+
+            <!-- FOOTER -->
+
+            <footer class="col-12 col-md-3 caja10">
+
+                <h4>
+                    <i class="bi bi-person-lines-fill me-2"></i>
+                    Contacto
+                </h4>
+
+                <p class="mt-4 mb-2">
+                    <i class="bi bi-envelope me-2"></i>
+
+                    <a href="mailto:contacto@ejemplo.com">
+                        contacto@ejemplo.com
+                    </a>
+                </p>
+
+                <small>
+                    © 2026 Mi Maqueta | SENA Cenigraf
+                </small>
+
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- BOOTSTRAP JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
